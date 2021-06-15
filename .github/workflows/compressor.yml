@@ -42,6 +42,7 @@ jobs:
           git fetch
           git add -A
           git commit -m "compress files" -a
+          git pull --force
       
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
