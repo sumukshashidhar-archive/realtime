@@ -10,6 +10,7 @@ for filename in os.listdir('./prices/'):
         try:
             fil = os.path.join('./prices/', filename)
             df = pd.read_csv(fil, header=None)
+            df = df.round(2)
             df = df.drop_duplicates(subset=[1, 2, 3, 4, 5, 6, 7], keep='last')
             df.to_csv(fil, header=False, index=False)
         except Exception as e:
@@ -22,6 +23,7 @@ for filename in os.listdir('./depth/'):
         try:
             fil = os.path.join('./depth/', filename)
             df = pd.read_csv(fil, header=None)
+            df = df.round(2)
             df = df.drop_duplicates(subset=[1, 2, 3, 4], keep='last')
             df.to_csv(fil, header=False, index=False)
         except Exception as e:
